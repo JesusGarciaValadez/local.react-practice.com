@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <main id="app"></main>
+  <!--script src="https://unpkg.com/react@15.6.1/dist/react.min.js"></script>
+  <script src="https://unpkg.com/react-dom@15.6.1/dist/react-dom.min.js"></script-->
+  <script src="https://unpkg.com/babel-standalone@6.25.0"></script>
+  <script src="https://unpkg.com/react@15.6.1/dist/react.js"></script>
+  <script src="https://unpkg.com/react-dom@15.6.1/dist/react-dom.js"></script>
+  <script src="https://unpkg.com/react-dom-factories@1.0.0"></script>
+  <script type="text/babel">
+    function Hola ( props, context ) {
+      return (
+        <h1 id="Title" onClick={props.onClick}>
+          Hola {props.name} {context.count}
+        </h1>
+      );
+    }
+
+    Hola.contextTypes = {
+      count: React.PropTypes.number,
+    }
+
+    class MiComponente extends React.Component {
+      constructor ( props ) {
+        super ( props );
+
+        this.state = {
+          count: 0,
+        }
+
+        this.handleClick = this.handleClick.bind( this );
+      }
+
+      componentWillMount () {
+        console.log( "El componente se va a montar" );
+      }
+
+      render () {
+        return (
+          <Hola
+            name={this.props.name}
+            count={this.state.count}
+            onClick={this.handleClick}
+          />
+        );
+      }
+
+      componentDidMount () {
+        document.addEventListener ( "click", this.handleClick );
+      }
+
+      // componentWillReceiveProps ( nextProps ) {
+      //   this.setState( {
+      //     count: this.state.count * 2,
+      //   } );
+      // }
+
+      shouldComponentUpdate ( nextProps, nextState ) {
+        if ( nextState.count > this.state.count ) return true;
+        return false;
+      }
+
+      componentWillUpdate ( nextProps, nextState ) {
+        console.log( "El componente se va a actualizar" );
+      }
+
+      componentDidUpdate ( prevPros, prevState ) {
+        console.log( "El componente se actualizó" );
+      }
+
+      componentWillUnmount () {
+        document.removeEventListener ( 'click', this.handleClick );
+      }
+
+      handleClick () {
+        this.setState( {
+          count: this.state.count + 1,
+        } );
+      }
+
+      getChildContext () {
+        return {
+          count: this.state.count,
+        };
+      }
+    }
+
+    MiComponente.childContextTypes = {
+      count: React.PropTypes.number,
+    };
+
+    ReactDOM.render(
+      <MiComponente name="Platzi" />,
+      document.getElementById( "app" )
+    );
+  </script>
+</body>
+</html>
