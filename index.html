@@ -6,19 +6,21 @@
 </head>
 <body>
   <main id="app"></main>
-  <script src="https://unpkg.com/babel-standalone@6.25.0"></script>
-  <script src="https://unpkg.com/react@15.6.1/dist/react.js"></script>
-  <script src="https://unpkg.com/react-dom@15.6.1/dist/react-dom.js"></script>
-  <script src="https://unpkg.com/react-dom-factories@1.0.0/index.js"></script>
+  <script src="https://unpkg.com/babel-standalone/babel.js"></script>
+  <script src="https://unpkg.com/react/dist/react.js"></script>
+  <script src="https://unpkg.com/react-dom/dist/react-dom.js"></script>
+  <script src="https://unpkg.com/react-dom-factories/index.js"></script>
+  <script src="https://unpkg.com/prop-types/prop-types.js"></script>
   <!--
+  <script src="https://unpkg.com/babel-standalone/babel.min.js"></script>
   <script src="https://unpkg.com/react@15.6.1/dist/react.min.js"></script>
   <script src="https://unpkg.com/react@15.6.1/dist/react-with-addons.js"></script>
   <script src="https://unpkg.com/react@15.6.1/dist/react-with-addons.min.js"></script>
   <script src="https://unpkg.com/react-dom@15.6.1/dist/react-dom.min.js"></script>
   -->
   <script type="text/babel">
-    function Counter ( WrapperComponent ) {
-      return class CounterHOC extends React.Component {
+    function Counter ( WrappedComponent ) {
+      class CounterHOC extends React.Component {
         constructor ( props ) {
           super ( props );
 
@@ -50,13 +52,16 @@
           );
         }
       }
+
+      CounterHOC.childContextTypes = {
+        count: PropTypes.number,
+      };
+
+      return CounterHOC;
     }
 
-    CounterHOC.childContextTypes = {
-      count: React.PropTypes.number,
-    };
 
-    function Hola ( props, context4 ) {
+    function Hola ( props, context ) {
       return (
         <h1 id="Title" onClick={props.onClick}>
           Hola {props.name} {context.count}
@@ -65,7 +70,7 @@
     }
 
     Hola.contextTypes = {
-      count: React.PropTypes.number,
+      count: PropTypes.number,
     }
 
     const HolaHOC = Counter ( Hola );
@@ -136,7 +141,7 @@
     }
 
     MiComponente.childContextTypes = {
-      count: React.PropTypes.number,
+      count: PropTypes.number,
     };
 
     ReactDOM.render(
