@@ -9,6 +9,30 @@
 	],
 "creatorBuild": "25849",
 "files": {
+	"\/.gitignore": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/.gitignore",
+		"oF": 0
+		},
+	"\/built\/server\/index.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/built\/server\/index-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/built\/statics\/app.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/built\/statics\/app-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/index.html": {
 		"ft": 8192,
 		"oA": 2,
@@ -37,11 +61,110 @@
 		"oO": 0,
 		"oS": 1
 		},
+	"\/source\/api.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/source\/api-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/source\/client.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/source\/client-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/source\/pages\/components\/Layout.jsx": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/source\/pages\/components\/Layout-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/source\/pages\/containers\/Error404.jsx": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/source\/pages\/containers\/Error404-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/source\/pages\/containers\/Home.jsx": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/source\/pages\/containers\/Home-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/source\/pages\/containers\/Page.jsx": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/source\/pages\/containers\/Page-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/source\/pages\/containers\/Post.jsx": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/source\/pages\/containers\/Post-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/source\/pages\/containers\/Profile.jsx": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/source\/pages\/containers\/Profile-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/source\/server.js": {
 		"ft": 64,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/source\/server-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/webpack.config.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/webpack.config-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/webpack\/webpack.client.config.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/webpack\/webpack.client.config-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/webpack\/webpack.server.config.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/webpack\/webpack.server.config-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -301,7 +424,7 @@
 			"active": 0
 			}
 		},
-	"babelPresetType": 193,
+	"babelPresetType": 225,
 	"babelRetainLines": 0,
 	"bowerAbbreviatedPath": "bower_components",
 	"bowerAutoCreateInfoFile": 1,
@@ -1822,7 +1945,7 @@
 		"quality": 100
 		},
 	"languageDefaultsJS": {
-		"autoOutputAction": 0,
+		"autoOutputAction": 1,
 		"autoOutputPathFilenamePattern": "*-min.js",
 		"autoOutputPathRelativePath": "\/min",
 		"autoOutputPathReplace1": "",

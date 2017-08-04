@@ -1,10 +1,10 @@
 const path = require( 'path' );
 
 module.exports = {
-  entry: './source/server.js',
+  entry: './source/client.js',
   output: {
-    filename: 'index.js',
-    path: path.resolve( __dirname, '../built/server' ),
+    filename: 'app.js',
+    path: path.resolve( __dirname, '../built/statics' ),
   },
   module: {
     loaders: [
@@ -17,13 +17,11 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /(node_modules)/,
         query: {
-          presets: [
-            'latest-minimal',
-            'react'
-          ],
+          presets: [ 'es2016', 'es2017', 'react' ],
+          plugins: [ 'transform-es2015-modules-commonjs' ],
         }
       }
     ]
   },
-  target: 'node',
+  target: 'web',
 };

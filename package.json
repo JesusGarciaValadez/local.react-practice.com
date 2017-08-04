@@ -5,21 +5,29 @@
   "main": "index.js",
   "dependencies": {
     "babel-standalone": "^6.25.0",
+    "isomorphic-fetch": "^2.2.1",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-dom-factories": "^1.0.0"
+    "react-dom-factories": "^1.0.0",
+    "react-router-dom": "^4.1.2"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "babel-preset-es2016": "^6.24.1",
+    "babel-preset-es2017": "^6.24.1",
     "babel-preset-latest-minimal": "^1.1.2",
     "babel-preset-react": "^6.24.1",
     "json-loader": "^0.5.7",
     "webpack": "^3.4.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "bff": "node ./built/server/index.js",
+    "sfs": "serve ./built/statics/ --port 3001 --cache 0"
   },
   "repository": {
     "type": "git",
