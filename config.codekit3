@@ -12,14 +12,14 @@
 	"\/.gitignore": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/.gitignore",
+		"oAP": "\/build\/.gitignore",
 		"oF": 0
 		},
 	"\/built\/server\/index.js": {
 		"ft": 64,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/built\/server\/index-min.js",
+		"oAP": "\/build\/built\/server\/index-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -28,7 +28,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/built\/statics\/app-min.js",
+		"oAP": "\/build\/built\/statics\/app-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -36,7 +36,7 @@
 	"\/index.html": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/index.html",
+		"oAP": "\/build\/index.html",
 		"oF": 0
 		},
 	"\/node_modules": {
@@ -48,7 +48,7 @@
 	"\/package-lock.json": {
 		"ft": 524288,
 		"oA": 1,
-		"oAP": "\/package-lock-min.json",
+		"oAP": "\/build\/package-lock-min.json",
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
@@ -56,7 +56,7 @@
 	"\/package.json": {
 		"ft": 524288,
 		"oA": 1,
-		"oAP": "\/package-min.json",
+		"oAP": "\/build\/package-min.json",
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
@@ -65,7 +65,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/source\/api-min.js",
+		"oAP": "\/build\/api-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -74,7 +74,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/source\/client-min.js",
+		"oAP": "\/build\/client-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -83,7 +83,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/source\/pages\/components\/Layout-min.js",
+		"oAP": "\/build\/pages\/components\/Layout-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -92,7 +92,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/source\/pages\/containers\/Error404-min.js",
+		"oAP": "\/build\/pages\/containers\/Error404-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -101,7 +101,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/source\/pages\/containers\/Home-min.js",
+		"oAP": "\/build\/pages\/containers\/Home-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -110,7 +110,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/source\/pages\/containers\/Page-min.js",
+		"oAP": "\/build\/pages\/containers\/Page-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -119,7 +119,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/source\/pages\/containers\/Post-min.js",
+		"oAP": "\/build\/pages\/containers\/Post-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -128,7 +128,16 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/source\/pages\/containers\/Profile-min.js",
+		"oAP": "\/build\/pages\/containers\/Profile-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/source\/posts\/containers\/Post.jsx": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/build\/posts\/containers\/Post-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -137,7 +146,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/source\/server-min.js",
+		"oAP": "\/build\/server-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -146,7 +155,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/webpack.config-min.js",
+		"oAP": "\/build\/webpack.config-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -155,7 +164,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/webpack\/webpack.client.config-min.js",
+		"oAP": "\/build\/webpack\/webpack.client.config-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -164,7 +173,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/webpack\/webpack.server.config-min.js",
+		"oAP": "\/build\/webpack\/webpack.server.config-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -176,13 +185,13 @@
 	},
 "projectAttributes": {
 	"creationDate": 523292794,
-	"displayValue": "local.react-practice.com",
+	"displayValue": "local.react-platzi.com",
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "meme-karate"
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
-	"alwaysUseExternalServer": 0,
+	"alwaysUseExternalServer": 1,
 	"animateCSSInjections": 1,
 	"autoBuildNewItems": 1,
 	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",
@@ -433,7 +442,7 @@
 	"bowerSaveDevDependencies": 0,
 	"bowerUseExactVersion": 0,
 	"browserRefreshDelay": 0,
-	"buildFolderActive": 0,
+	"buildFolderActive": 1,
 	"buildFolderName": "build",
 	"cleanBuild": 1,
 	"coffeeLintFlags2": {
@@ -1536,7 +1545,7 @@
 			}
 		},
 	"esLintSourceType": 0,
-	"externalServerAddress": "http:\/\/localhost:8888",
+	"externalServerAddress": "http:\/\/localhost:3000",
 	"gitIgnoreBuildFolder": 1,
 	"hideConfigFile": 0,
 	"jsCheckerReservedNamesString": "",
@@ -2286,7 +2295,7 @@
 			}
 		},
 	"uglifyReservedNamesString": "$",
-	"websiteRelativeRoot": ""
+	"websiteRelativeRoot": "\/build"
 	},
 "settingsFileVersion": "3"
 }
