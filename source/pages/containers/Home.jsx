@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 
 import Post from '../../posts/containers/Post.jsx';
 import Loading from '../../shared/components/Loading.jsx';
+import Header from '../../shared/components/Header.jsx';
 
 import api from '../../api.js';
 
@@ -54,7 +55,7 @@ class Home extends React.Component {
           post: this.state.posts.concat( posts ),
           page: this.state.page + 1,
           loading: false,
-        });
+        } );
       } catch ( error ) {
         console.error( error );
         this.setState( { loading: false } );
@@ -64,16 +65,16 @@ class Home extends React.Component {
 
   render () {
     return (
-      <section name="home">
-        <h1>Home</h1>
+      <section name="Home">
+        <Header />
 
         <section>
-          {this.state.loading && (
-            <Loading />
-          )}
           {this.state.posts
             .map( post => <Post key={post.id} {...post} /> )
           }
+          {this.state.loading && (
+            <Loading />
+          )}
         </section>
       </section>
     );

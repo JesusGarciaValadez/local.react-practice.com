@@ -79,6 +79,15 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/source\/comments\/components\/Comment.jsx": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/build\/comments\/components\/Comment-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/source\/pages\/components\/Layout.jsx": {
 		"ft": 64,
 		"mi": 1,
@@ -151,6 +160,34 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/source\/shared\/components\/Header.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/shared\/components\/Header-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/source\/shared\/components\/Header.jsx": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/build\/shared\/components\/Header-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/source\/shared\/components\/Loading.jsx": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/build\/shared\/components\/Loading-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/webpack.config.js": {
 		"ft": 64,
 		"mi": 1,
@@ -185,13 +222,13 @@
 	},
 "projectAttributes": {
 	"creationDate": 523292794,
-	"displayValue": "local.react-platzi.com",
+	"displayValue": "local.react-practice.com",
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "meme-karate"
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
-	"alwaysUseExternalServer": 1,
+	"alwaysUseExternalServer": 0,
 	"animateCSSInjections": 1,
 	"autoBuildNewItems": 1,
 	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",
@@ -585,7 +622,7 @@
 		},
 	"esLintConfigFileHandlingType": 0,
 	"esLintECMAVersion": 7,
-	"esLintEnvironmentsMask": 1,
+	"esLintEnvironmentsMask": 19,
 	"esLintRules": {
 		"accessor-pairs": {
 			"active": 0,
@@ -1545,7 +1582,7 @@
 			}
 		},
 	"esLintSourceType": 0,
-	"externalServerAddress": "http:\/\/localhost:3000",
+	"externalServerAddress": "http:\/\/localhost:8888",
 	"gitIgnoreBuildFolder": 1,
 	"hideConfigFile": 0,
 	"jsCheckerReservedNamesString": "",
@@ -1611,7 +1648,7 @@
 			"flagValue": -1
 			},
 		"esnext": {
-			"active": 0,
+			"active": 1,
 			"flagValue": -1
 			},
 		"evil": {
@@ -1731,7 +1768,7 @@
 			"flagValue": -1
 			},
 		"node": {
-			"active": 0,
+			"active": 1,
 			"flagValue": -1
 			},
 		"noempty": {
@@ -1865,11 +1902,11 @@
 			"flagValue": -1
 			},
 		"devel": {
-			"active": 0,
+			"active": 1,
 			"flagValue": -1
 			},
 		"es6": {
-			"active": 0,
+			"active": 1,
 			"flagValue": -1
 			},
 		"eval": {
@@ -1885,7 +1922,7 @@
 			"flagValue": 150
 			},
 		"node": {
-			"active": 0,
+			"active": 1,
 			"flagValue": -1
 			},
 		"this": {
@@ -1960,7 +1997,7 @@
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 0,
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"minifyOutput": 1,
 		"syntaxCheckerStyle": 1,
 		"transpilerStyle": 0

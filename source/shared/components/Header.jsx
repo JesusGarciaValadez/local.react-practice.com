@@ -3,9 +3,9 @@ import { Link } from 'react-router';
 
 import styles from './Header.css';
 
-function Header {
+function Header () {
   return (
-    <header>
+    <header className="{styles.header}">
       <h1>Mi primera app con React</h1>
 
       <nav role="navigation">
