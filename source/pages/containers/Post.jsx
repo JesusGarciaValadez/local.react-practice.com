@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import PropTypes from 'prop-types';
 
-import PostBody from '../../posts/containers/Post.jsx';
-import Loading from '../../shared/components/Loading.jsx';
-import Comment from '../../comments/components/Comment.jsx';
+import PostBody from '../../posts/containers/Post';
+import Loading from '../../shared/components/Loading';
+import Comment from '../../comments/components/Comment';
 
-import api from '../../api.js';
+import api from '../../api';
 
 class Post extends Component {
-  constructor ( props ) {
-    super( props );
+  constructor(props) {
+    super(props);
 
     this.state = {
       loading: true,
@@ -19,27 +19,31 @@ class Post extends Component {
     };
   }
 
-  async componentDidMount () {
+  componentDidMount() {
+    this.initialFetch();
+  }
+
+  async initialFetch() {
     const [
       post,
-      comments
-    ] = await Promise.all( [
-      api.posts.getSingle( this.props.params.id ),
-      api.posts.getComments( this.props.params.id ),
-    ] );
+      comments,
+    ] = await Promise.all([
+      api.posts.getSingle(this.props.params.id),
+      api.posts.getComments(this.props.params.id),
+    ]);
 
-    const user = await api.users.getSingle( post.userId );
+    const user = await api.users.getSingle(post.userId);
 
-    this.setState( {
+    this.setState({
       loading: false,
       post,
       user,
       comments,
-    } );
+    });
   }
 
-  render () {
-    if ( this.state.loading ) {
+  render() {
+    if (this.state.loading) {
       return <Loading />;
     }
 
@@ -52,7 +56,7 @@ class Post extends Component {
         />
         <section>
           {this.state.comments
-            .map( comment => (
+            .map(comment => (
               <Comment key={comment.id} {...comment} />
             ))
           }
@@ -61,5 +65,17 @@ class Post extends Component {
     );
   }
 }
+
+Post.defaultProps = {
+  params: {
+    id: '',
+  },
+};
+
+Post.propTypes = {
+  params: PropTypes.shape({
+    id: PropTypes.string,
+  }),
+};
 
 export default Post;

@@ -3,21 +3,13 @@ import React from 'react';
 import { renderToString, renderToStaticMarkup } from 'react-dom/server';
 import { StaticRouter } from 'react-router';
 
-import Pages from './pages/containers/Page.jsx';
-import Layout from './pages/components/Layout.jsx';
+import Pages from './pages/containers/Page';
+import Layout from './pages/components/Layout';
 
-class MyComponent extends React.Component {
-  render () {
-    return (
-      <h1>hola</h1>
-    );
-  }
-}
-
-function requestHandler ( request, response ) {
+function requestHandler(request, response) {
   const context = {};
 
-  const html = renderToString(
+  let html = renderToString(
     <Provider store={store}>
       <IntlProvider locale={locale} messages={messages[locale]}>
         <StaticRouter location={request.url} context={context}>
@@ -27,23 +19,23 @@ function requestHandler ( request, response ) {
     </Provider>,
   );
 
-  response.setHeader( "Contect-Type", "text/html" );
+  response.setHeader('Contect-Type', 'text/html');
 
-  if ( context.url ) {
-    response.writeHead( 301, {
+  if (context.url) {
+    response.writeHead(301, {
       Location: context.url,
-    } );
+    });
 
     response.end();
   }
 
-  if ( result.missed ) {
-    response.writeHead( 404 );
+  if (result.missed) {
+    response.writeHead(404);
 
     html = renderToString(
       <ServerRouter location={request.url} context={context}>
         <Pages />
-      </ServerRouter>
+      </ServerRouter>,
     );
   }
 
@@ -52,12 +44,12 @@ function requestHandler ( request, response ) {
       <Layout
         title="Aplicación"
         content={html}
-      />
-    )
+      />,
+    ),
   );
   response.end();
 }
 
-const server = http.createServer( requestHandler );
+const server = http.createServer(requestHandler);
 
-server.listen( 3000 );
+server.listen(3000);

@@ -1,13 +1,20 @@
-const path = require( 'path' );
-const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
+const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  entry: './source/server.js',
+  entry: './source/server.jsx',
   output: {
     filename: 'index.js',
-    path: path.resolve( __dirname, '../built/server' ),
+    path: path.resolve(__dirname, '../built/server'),
   },
   module: {
+    rules: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+      },
+    ],
     loaders: [
       {
         test: /\.json$/,
@@ -18,20 +25,23 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /(node_modules)/,
         query: {
-          presets: [
-            'latest-minimal',
-            'react'
-          ],
-        }
+          presets: ['latest-minimal', 'react'],
+        },
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract( 'style', 'css?modules' ),
+        loader: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader?modules',
+        }),
       },
-    ]
+    ],
   },
   target: 'node',
+  resolve: {
+    extensions: ['.js', '.jsx', '.css'],
+  },
   plugins: [
-    new ExtractTextPlugin( '../statics/styles.css' ),
+    new ExtractTextPlugin('../statics/styles.css'),
   ],
 };

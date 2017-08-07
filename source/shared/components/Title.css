@@ -1,0 +1,14 @@
+.title {
+  color: #FFF;
+  flex-shrink: 0;
+  font-size: 2em;
+  font-weight: normal;
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: .5em 1em;
+  width: 100%;
+}

@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import PropTypes from 'prop-types';
 
-import Post from '../../posts/containers/Post.jsx';
-import Loading from '../../shared/components/Loading.jsx';
+import Post from '../../posts/containers/Post';
+import Loading from '../../shared/components/Loading';
 
-import api from '../../api.js';
+import api from '../../api';
 
 class Profile extends Component {
-  constructor( props ) {
-    super( props );
+  constructor(props) {
+    super(props);
 
     this.state = {
       user: {},
@@ -17,25 +17,29 @@ class Profile extends Component {
     };
   }
 
-  async componentDidMount() {
+  componentDidMount() {
+    this.initialFetch();
+  }
+
+  async initialFetch() {
     const [
       user,
       posts,
-    ] = await Promise.all( [
-      api.users.getSingle( this.props.params.id ),
-      api.users.getPosts( this.props.params.id )
-    ] );
+    ] = await Promise.all([
+      api.users.getSingle(this.props.params.id),
+      api.users.getPosts(this.props.params.id),
+    ]);
 
-    this.setState( {
+    this.setState({
       user,
       posts,
       loading: false,
-    } );
+    });
   }
 
   render() {
-    if ( this.state.loading ) {
-      return <Loading />
+    if (this.state.loading) {
+      return <Loading />;
     }
 
     return (
@@ -47,7 +51,7 @@ class Profile extends Component {
           <input type="email" value={this.state.user.email} disabled />
         </fieldset>
 
-        {this.state.user.address && (+
+        {this.state.user.address && (
           <fieldset>
             <legend>Address</legend>
             <address>
@@ -61,18 +65,30 @@ class Profile extends Component {
 
         <section>
           {this.state.posts
-            .map( post => (
+            .map(post => (
               <Post
                 key={post.id}
                 user={this.state.user}
                 {...post}
               />
-            ) )
+            ))
           }
         </section>
       </section>
     );
   }
 }
+
+Profile.defaultProps = {
+  params: {
+    id: '',
+  },
+};
+
+Profile.propTypes = {
+  params: PropTypes.shape({
+    id: PropTypes.string,
+  }),
+};
 
 export default Profile;

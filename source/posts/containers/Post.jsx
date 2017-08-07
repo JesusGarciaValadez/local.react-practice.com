@@ -1,11 +1,14 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router';
+import PropTypes from 'prop-types';
 
-import api from '../../api.js';
+import api from '../../api';
+
+import styles from './Post.css';
 
 class Post extends Component {
-  constructor() {
-    super( props );
+  constructor(props) {
+    super(props);
 
     this.state = {
       loading: true,
@@ -14,43 +17,50 @@ class Post extends Component {
     };
   }
 
-  async componentDidMount() {
-    if ( !!this.state.user && !!this.state.comments ) {
-      return this.setState( {
-        loading: false
-      } );
+  componentDidMount() {
+    this.initialFetch();
+  }
+
+  async initialFetch() {
+    if (!!this.state.user && !!this.state.comments) {
+      return this.setState({
+        loading: false,
+      });
     }
 
     const [
       user,
       comments,
-    ] = await Promise.all( [
-      !this.state.user ? api.users.getSingle( this.props.userId ) : Promise.resolve( null ),
-      !this.state.user ? api.posts.getComments( this.props.id ) : Promise.resolve( null )
-    ] );
+    ] = await Promise.all([
+      !this.state.user ? api.users.getSingle(this.props.userId) : Promise.resolve(null),
+      !this.state.user ? api.posts.getComments(this.props.id) : Promise.resolve(null),
+    ]);
 
-    this.setState( {
+    return this.setState({
       loading: false,
       user: user || this.state.user,
       comments: comments || this.state.comments,
-    } ) ;
+    });
   }
 
-  render () {
+  render() {
     return (
-      <article id={`post-${this.props.id}`}>
-        <Link to={`/post/${this.props.id}`} />
-        <h2>{this.props.title}</h2>
-        <p>
+      <article id={`post-${this.props.id}`} className={styles.post}>
+        <h2 className={styles.titles}>
+          <Link to={`/post/${this.props.id}`}>
+            {this.props.title}
+          </Link>
+        </h2>
+        <p className={styles.body}>
           {this.props.body}
         </p>
         {!this.state.loading && (
-          <div>
-            <Link to={`/user/${this.state.user.id}`}>
+          <div className={styles.meta}>
+            <Link to={`/user/${this.state.user.id}`} className={styles.user}>
               {this.state.user.name}
             </Link>
 
-            <span>
+            <span className={styles.comments}>
               Hay {this.state.comments.length}
             </span>
           </div>
@@ -60,11 +70,26 @@ class Post extends Component {
   }
 }
 
+Post.defaultProps = {
+  id: 0,
+  userId: 0,
+  title: '',
+  body: '',
+  user: [],
+  comments: [],
+};
+
 Post.propTypes = {
   id: PropTypes.number,
   userId: PropTypes.number,
   title: PropTypes.string,
   body: PropTypes.string,
+  user: PropTypes.shape({
+    name: PropTypes.string,
+  }),
+  comments: PropTypes.arrayOf(
+    PropTypes.object,
+  ),
 };
 
-export default Post
+export default Post;

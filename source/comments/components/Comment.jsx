@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function Comment( props ) {
+function Comment(props) {
   return (
     <article id={`comment-${props.id}`}>
       <div>
@@ -13,5 +14,19 @@ function Comment( props ) {
     </article>
   );
 }
+
+Comment.defaultProps = {
+  id: 0,
+  email: '',
+  name: '',
+  body: '',
+};
+
+Comment.propTypes = {
+  id: PropTypes.number,
+  email: PropTypes.string,
+  name: PropTypes.string,
+  body: PropTypes.string,
+};
 
 export default Comment;
