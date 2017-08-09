@@ -1,41 +1,56 @@
 import http from 'http';
 import React from 'react';
 import { renderToString, renderToStaticMarkup } from 'react-dom/server';
-import { StaticRouter } from 'react-router';
+import { ServerRouter, createServerRenderContext } from 'react-router';
+import { IntlProvider } from 'react-intl';
+import { Provider } from 'react-redux';
 
 import Pages from './pages/containers/Page';
 import Layout from './pages/components/Layout';
 
+import messages from './messages.json';
+
+import store from './store';
+
+const domain = process.env.NODE_ENV === 'production'
+  ? 'https://chucho-platzi-react-sfs.now.sh'
+  : 'http://localhost:3001';
+
 function requestHandler(request, response) {
-  const context = {};
+  const locale = request.header['accept-language'].indexOf('es') >= 0 ? 'es' : 'en';
+  const context = createServerRenderContext();
 
   let html = renderToString(
     <Provider store={store}>
       <IntlProvider locale={locale} messages={messages[locale]}>
-        <StaticRouter location={request.url} context={context}>
+        <ServerRouter location={request.url} context={context}>
           <Pages />
-        </StaticRouter>
+        </ServerRouter>
       </IntlProvider>
     </Provider>,
   );
 
+  const result = context.getResult();
+
   response.setHeader('Contect-Type', 'text/html');
 
-  if (context.url) {
+  if (result.redirect) {
     response.writeHead(301, {
-      Location: context.url,
+      Location: result.redirect.pathname,
     });
-
-    response.end();
   }
 
   if (result.missed) {
     response.writeHead(404);
 
     html = renderToString(
-      <ServerRouter location={request.url} context={context}>
-        <Pages />
-      </ServerRouter>,
+      <Provider store={store}>
+        <IntlProvider locale={locale} messages={messages[locale]}>
+          <ServerRouter location={request.url} context={context}>
+            <Pages />
+          </ServerRouter>
+        </IntlProvider>
+      </Provider>,
     );
   }
 
@@ -44,6 +59,7 @@ function requestHandler(request, response) {
       <Layout
         title="Aplicación"
         content={html}
+        domain={domain}
       />,
     ),
   );

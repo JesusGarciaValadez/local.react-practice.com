@@ -67,7 +67,7 @@
 /* 0 */
 /***/ (function(module, exports) {
 
-throw new Error("Module parse failed: /Users/jesusgarcia/sites/local.react-platzi.com/node_modules/eslint-loader/index.js!/Users/jesusgarcia/sites/local.react-platzi.com/source/client.jsx Unexpected token (8:2)\nYou may need an appropriate loader to handle this file type.\n| \n| render(\n|   <BrowserRouter>\n|     <Pages />\n|   </BrowserRouter>,");
+throw new Error("Module parse failed: /Users/jesusgarcia/sites/local.react-platzi.com/node_modules/eslint-loader/index.js!/Users/jesusgarcia/sites/local.react-platzi.com/source/client.jsx Unexpected token (18:2)\nYou may need an appropriate loader to handle this file type.\n| \n| render(\n|   <IntlProvider locale={locale} messages={messages[locale]}>\n|     <BrowserRouter>\n|       <Pages />");
 
 /***/ })
 /******/ ]);
