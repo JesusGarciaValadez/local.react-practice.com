@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pokédex</title>
+</head>
+<body>
+  <main id="pokemon"></main>
+  <script src="https://unpkg.com/babel-standalone/babel.js"></script>
+  <script src="https://unpkg.com/react/dist/react.js"></script>
+  <script src="https://unpkg.com/react-dom/dist/react-dom.js"></script>
+  <script src="https://unpkg.com/react-dom-factories/index.js"></script>
+  <script src="https://unpkg.com/prop-types/prop-types.js"></script>
+  <script type="text/babel">
+    function PokemonIMG(props) {
+      return (
+        <img src={props.image} alt={props.name} />
+      );
+    }
+
+    function PokemonName(props) {
+      return (
+        <figcaption>{props.name}</figcaption>
+      );
+    }
+
+    function PokemonAbility(props) {
+      return(
+        <li>{props.ability}</li>
+      );
+    }
+
+    function PokemonMove(props) {
+      return(
+        <li>{props.move}</li>
+      );
+    }
+
+    class Pokemon extends React.Component {
+      constructor(props) {
+        super(props);
+
+        this.state = {
+          id: 0,
+          name: "",
+          img: "",
+          level: 0,
+          abilities: [],
+          moves: [],
+        };
+      };
+
+      async componentDidMount() {
+        const response = await fetch(`http://pokeapi.co/api/v2/pokemon/1/`);
+
+        const pokemon = await response.json();
+
+        console.log( pokemon );
+        this.setState({
+          id: pokemon.id,
+          name: pokemon.name,
+          img: pokemon.sprites.front_default,
+          level: pokemon.base_experience,
+          abilities: pokemon.abilities,
+          moves: pokemon.moves,
+        });
+      };
+
+      render(){
+        return (
+          <section>
+            <h1>Pokemon Name</h1>
+            <figure>
+              <PokemonIMG name={this.state.name} image={this.state.img} />
+              <PokemonName name={this.state.name} />
+            </figure>
+            <button id="prev">Anterior</button>
+            <button id="next">Siguiente</button>
+            <h2>Abilities availables</h2>
+            <ul>
+              {this.state.abilities
+                .map((ability, index) => <PokemonAbility ability={ability.ability.name} key={index} />)
+              }
+            </ul>
+            <h3>Moves availables</h3>
+            <ul>
+              {this.state.moves
+                .map((move, index) => <PokemonMove move={move.move.name} key={index} />)
+              }
+            </ul>
+          </section>
+        );
+      };
+    }
+
+    Pokemon.defaultProps = {
+      prev: 0,
+      next: 0,
+    }
+
+    Pokemon.propTypes = {
+      id: PropTypes.number,
+      name: PropTypes.string,
+      img: PropTypes.string,
+      level: PropTypes.number,
+      abilities: PropTypes.arrayOf(PropTypes.object),
+      moves: PropTypes.arrayOf(PropTypes.object),
+      prev: PropTypes.number,
+      next: PropTypes.number,
+    };
+
+    ReactDOM.render(
+      <Pokemon />,
+      document.getElementById('pokemon')
+    );
+  </script>
+</body>
+</html>
