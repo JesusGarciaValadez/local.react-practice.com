@@ -7,31 +7,25 @@
 		"uuidString": "066E453F-CACF-486B-9A0B-CD3E03C32968"
 		}
 	],
-"creatorBuild": "25849",
+"creatorBuild": "25900",
 "files": {
+	"\/.eslintrc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/build\/.eslintrc",
+		"oF": 0
+		},
 	"\/.gitignore": {
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/build\/.gitignore",
 		"oF": 0
 		},
-	"\/built\/server\/index.js": {
-		"ft": 64,
-		"mi": 1,
+	"\/build": {
+		"ft": 65536,
 		"oA": 1,
-		"oAP": "\/build\/built\/server\/index-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
-	"\/built\/statics\/app.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 1,
-		"oAP": "\/build\/built\/statics\/app-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
+		"oAP": "\/build\/build",
+		"oF": 0
 		},
 	"\/index.html": {
 		"ft": 8192,
@@ -61,8 +55,19 @@
 		"oO": 0,
 		"oS": 1
 		},
+	"\/source\/actions.js": {
+		"ft": 64,
+		"ma": 1,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/build\/actions-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/source\/api.js": {
 		"ft": 64,
+		"ma": 1,
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/build\/api-min.js",
@@ -70,8 +75,9 @@
 		"sC": 1,
 		"tS": 0
 		},
-	"\/source\/client.js": {
+	"\/source\/client.jsx": {
 		"ft": 64,
+		"ma": 1,
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/build\/client-min.js",
@@ -81,6 +87,7 @@
 		},
 	"\/source\/comments\/components\/Comment.jsx": {
 		"ft": 64,
+		"ma": 1,
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/build\/comments\/components\/Comment-min.js",
@@ -88,8 +95,17 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/source\/messages.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/build\/messages-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
 	"\/source\/pages\/components\/Layout.jsx": {
 		"ft": 64,
+		"ma": 1,
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/build\/pages\/components\/Layout-min.js",
@@ -99,6 +115,7 @@
 		},
 	"\/source\/pages\/containers\/Error404.jsx": {
 		"ft": 64,
+		"ma": 1,
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/build\/pages\/containers\/Error404-min.js",
@@ -108,6 +125,7 @@
 		},
 	"\/source\/pages\/containers\/Home.jsx": {
 		"ft": 64,
+		"ma": 1,
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/build\/pages\/containers\/Home-min.js",
@@ -115,8 +133,19 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/source\/pages\/containers\/Page.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/pages\/containers\/Page-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"\/source\/pages\/containers\/Page.jsx": {
 		"ft": 64,
+		"ma": 1,
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/build\/pages\/containers\/Page-min.js",
@@ -126,6 +155,7 @@
 		},
 	"\/source\/pages\/containers\/Post.jsx": {
 		"ft": 64,
+		"ma": 1,
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/build\/pages\/containers\/Post-min.js",
@@ -135,6 +165,7 @@
 		},
 	"\/source\/pages\/containers\/Profile.jsx": {
 		"ft": 64,
+		"ma": 1,
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/build\/pages\/containers\/Profile-min.js",
@@ -142,8 +173,19 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/source\/posts\/containers\/Post.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/posts\/containers\/Post-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"\/source\/posts\/containers\/Post.jsx": {
 		"ft": 64,
+		"ma": 1,
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/build\/posts\/containers\/Post-min.js",
@@ -151,8 +193,19 @@
 		"sC": 1,
 		"tS": 0
 		},
-	"\/source\/server.js": {
+	"\/source\/reducer.js": {
 		"ft": 64,
+		"ma": 1,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/build\/reducer-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/source\/server.jsx": {
+		"ft": 64,
+		"ma": 1,
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/build\/server-min.js",
@@ -172,6 +225,7 @@
 		},
 	"\/source\/shared\/components\/Header.jsx": {
 		"ft": 64,
+		"ma": 1,
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/build\/shared\/components\/Header-min.js",
@@ -181,6 +235,7 @@
 		},
 	"\/source\/shared\/components\/Loading.jsx": {
 		"ft": 64,
+		"ma": 1,
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/build\/shared\/components\/Loading-min.js",
@@ -188,8 +243,39 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/source\/shared\/components\/Title.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/shared\/components\/Title-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/source\/shared\/components\/Title.jsx": {
+		"ft": 64,
+		"ma": 1,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/build\/shared\/components\/Title-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/source\/store.js": {
+		"ft": 64,
+		"ma": 1,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/build\/store-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/webpack.config.js": {
 		"ft": 64,
+		"ma": 1,
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/build\/webpack.config-min.js",
@@ -199,6 +285,7 @@
 		},
 	"\/webpack\/webpack.client.config.js": {
 		"ft": 64,
+		"ma": 1,
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/build\/webpack\/webpack.client.config-min.js",
@@ -208,6 +295,7 @@
 		},
 	"\/webpack\/webpack.server.config.js": {
 		"ft": 64,
+		"ma": 1,
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/build\/webpack\/webpack.server.config-min.js",
@@ -239,7 +327,7 @@
 	"babelCustomPresetsList": "",
 	"babelInsertModuleIDs": 0,
 	"babelModuleID": "",
-	"babelNoComments": 0,
+	"babelNoComments": 1,
 	"babelPlugins": {
 		"async-generator-functions": {
 			"active": 0
@@ -628,6 +716,10 @@
 			"active": 0,
 			"optionString": "{'setWithoutGet': true, 'getWithoutSet': false}"
 			},
+		"array-bracket-newline": {
+			"active": 0,
+			"optionString": "{'multiline': true, 'minItems': null}"
+			},
 		"array-bracket-spacing": {
 			"active": 0,
 			"optionString": "'never', {'singleValue': false, 'objectsInArrays': false, 'arraysInArrays': false}"
@@ -635,6 +727,10 @@
 		"array-callback-return": {
 			"active": 0,
 			"optionString": ""
+			},
+		"array-element-newline": {
+			"active": 0,
+			"optionString": "'always'"
 			},
 		"arrow-body-style": {
 			"active": 0,
@@ -732,6 +828,10 @@
 			"active": 0,
 			"optionString": "'always', {'null': 'always'}"
 			},
+		"for-direction": {
+			"active": 0,
+			"optionString": ""
+			},
 		"func-call-spacing": {
 			"active": 0,
 			"optionString": "'never'"
@@ -751,6 +851,10 @@
 		"generator-star-spacing": {
 			"active": 0,
 			"optionString": "{'before': true, 'after': false}"
+			},
+		"getter-return": {
+			"active": 0,
+			"optionString": "{'allowImplicit': false}"
 			},
 		"global-require": {
 			"active": 0,
@@ -879,6 +983,10 @@
 		"no-bitwise": {
 			"active": 0,
 			"optionString": "{'allow': ['~'], 'int32Hint': true}"
+			},
+		"no-buffer-constructor": {
+			"active": 0,
+			"optionString": ""
 			},
 		"no-caller": {
 			"active": 0,
@@ -1424,6 +1532,10 @@
 			"active": 0,
 			"optionString": "{'blocks': 'always', 'switches': 'always', 'classes': 'always'}"
 			},
+		"padding-line-between-statements": {
+			"active": 0,
+			"optionString": "{blankLine: 'always', prev:'*', next:'return'}"
+			},
 		"prefer-arrow-callback": {
 			"active": 0,
 			"optionString": ""
@@ -1492,6 +1604,10 @@
 			"active": 0,
 			"optionString": "{'before': false, 'after': true}"
 			},
+		"semi-style": {
+			"active": 0,
+			"optionString": "'last'"
+			},
 		"sort-imports": {
 			"active": 0,
 			"optionString": "{'ignoreCase': false, 'ignoreMemberSort': true, 'memberSyntaxSortOrder': ['none', 'all', 'multiple', 'single']}"
@@ -1531,6 +1647,10 @@
 		"strict": {
 			"active": 0,
 			"optionString": "'safe'"
+			},
+		"switch-colon-spacing": {
+			"active": 0,
+			"optionString": "{'after': true, 'before': false}"
 			},
 		"symbol-description": {
 			"active": 0,
@@ -2164,6 +2284,7 @@
 	"previewPathAddition": "",
 	"skippedFoldersString": "log, _logs, logs, _cache, cache, \/storage\/framework\/sessions, node_modules",
 	"sourceFolderName": "source",
+	"susyVersion": 3,
 	"uglifyDefinesString": "",
 	"uglifyFlags2": {
 		"ascii-only": {
